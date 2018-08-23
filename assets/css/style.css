@@ -2,12 +2,21 @@ body {
     background-color: blanchedalmond;
 }
 
+#bannerName{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
 img {
-    width: 180px;
+    width: 300px;
     border:2px solid black;
     border-radius: 4px;
 }
 
+h2{
+    text-align: center;
+}
 .selectImg{
     padding-top: 10px;
+    text-align: center;
 }
