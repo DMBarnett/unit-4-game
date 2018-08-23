@@ -1,0 +1,13 @@
+body {
+    background-color: blanchedalmond;
+}
+
+img {
+    width: 180px;
+    border:2px solid black;
+    border-radius: 4px;
+}
+
+.selectImg{
+    padding-top: 10px;
+}
