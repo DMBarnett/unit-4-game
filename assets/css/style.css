@@ -20,3 +20,18 @@ h2{
     padding-top: 10px;
     text-align: center;
 }
+
+#gameplayArea {
+    display: none;
+    text-align: center;
+}
+
+#deathScreen{
+    display: none;
+    text-align: center;
+}
+
+#winScreen{
+    display: none;
+    text-align: center;
+}
