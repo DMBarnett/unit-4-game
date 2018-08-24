@@ -22,7 +22,7 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron" id="bannerName">
+        <div class="header" id="bannerName">
             <h1>Clash of Thrones</h1>
         </div>
     </div>
@@ -41,33 +41,33 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Jaime">
-                            <img src="assets/images/Jaime-Lannister.jpg">
+                        <a href="#" id="Jaime">
+                            <img src="assets/images/Jaime-Lannister.jpg" class="charSelect">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Jon">
-                            <img src="assets/images/jonSnow.jpeg">
+                        <a href="#" id="Jon">
+                            <img src="assets/images/jonSnow.jpeg" class="charSelect">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Jorah">
-                            <img src="assets/images/jorahMormont.jpg">
+                        <a href="#" id="Jorah">
+                            <img src="assets/images/jorahMormont.jpg" class="charSelect">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Arya">
-                            <img src="assets/images/aryaStark.jpg">
+                        <a href="#" id="Arya">
+                            <img src="assets/images/aryaStark.jpg" class="charSelect">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Kristofer">
-                            <img src="assets/images/kristoferHivju.jpeg">
+                        <a href="#" id="Kristofer">
+                            <img src="assets/images/kristoferHivju.jpeg" class="charSelect">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" class="charSelect" id="Daenerys">
-                            <img src="assets/images/daenerysTargaryen.jpg">
+                        <a href="#" id="Daenerys">
+                            <img src="assets/images/daenerysTargaryen.jpg" class="charSelect">
                         </a>a</div>
                 </div>
             </div>
@@ -75,8 +75,44 @@
     </div>
     <div class="container" id="gameplayArea">
         <div class="row">
-            <div class="col-12 col-md-6">Your Health:<progress value="100" max="100"></progress></div>
-            <div class="col-12 col-md-6">Your Experiance:<progress value="100" max="100"></progress></div>
+            <div class="col-12 col-md-6">
+                Your Health:
+                <progress value="100" max="100" id="healthBar"></progress>
+            </div>
+            <div class="col-12 col-md-6">
+                Your Experience:
+                <progress value="100" max="100" id="expBar"></progress>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6" id="playerArea">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-12 col-md-6" id="playerImage">
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" id="enemyArea">
+                <div class="row">
+                    <div class="col-6" id="enemy1"><a href="#"><img></a></div>
+                    <div class="col-6" id="enemy2"><a href="#"><img></a></div>
+                </div>
+                <div class="row">
+                    <div class="col-6" id="enemy3"><a href="#"><img></a></div>
+                    <div class="col-6" id="enemy4"><a href="#"><img></a></div>
+                </div>
+                <div class="row">
+                    <div class="col-6" id="enemy5"><a href="#"><img></a></div>
+                    <div class="col-6" id="enemy6"><a href="#"><img></a></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container" id="deathScreen">
@@ -85,13 +121,19 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6"><a href="#">Do you want to play a new game?</a></div>
+            <div class="col-6">
+                <a href="#">Do you want to play a new game?</a>
+            </div>
             <div class="col-3"></div>
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-3"><button id="Y">Yes</button></div>
-            <div class="col-3"><button id="N">No</button></div>
+            <div class="col-3">
+                <button id="Y">Yes</button>
+            </div>
+            <div class="col-3">
+                <button id="N">No</button>
+            </div>
             <div class="col-3"></div>
         </div>
     </div>

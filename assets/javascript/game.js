@@ -3,6 +3,7 @@ $(document).ready(function(){
     var charSelectScreen = $("#charSelectScreen");
     var gameScreen = $("#gameplayArea");
     var yourCharacter;
+    var playerImg = $("#playerImage");
     var enemies = {
         "foot":"Frozen Zombie",
         "boss":"White Walker",
@@ -43,9 +44,9 @@ $(document).ready(function(){
         }
 
     }
-    class enemies{
+    class enemy{
         constructor(type){
-            this.name = enemies.type;
+            this.name = enemy.type;
             this.health = ((type)=>{
                 if(type === "foot"){
                     return 100;
@@ -70,7 +71,21 @@ $(document).ready(function(){
                 }else if(type === "boss"){
                     return (Math.floor(Math.random()*(100-50+1)+20));;
                 }else{
-                    return 500;
+                    return 0;
+                }
+            })
+            this.image = ((type)=>{
+                if(type === "foot"){
+                    var temp = Math.floor(Math.random()*2)
+                    if(temp === 0){
+                        return "assets/images/zombie1.jpg";
+                    }else{
+                        return "assets/images/zombie2.jpg";
+                    }
+                }else if(type === "boss"){
+                    return "assets/images/whiteWalker.jpg";
+                }else{
+                    return "assets/images/kingWalker.png";
                 }
             })
         }
@@ -110,34 +125,30 @@ $(document).ready(function(){
         yourCharacter.health+=50;
     };
 
-    function startGame(){
-        $()
-        for (var i = 0; i < waveNumber; i++) {
-           createWave(i);
-           waveNumber++;
-        }
+    // function startGame(){
 
-    }
+    // }
 
-    function createWave(iteration){
-        if(i>3){};
-    }
+    // function createWave(iteration){
 
-    $(".charSelect").on("click", function(){
+    // }
+
+    $(".charSelect").click(function(){
         yourCharacter = new startingCharacter(this.id, this.src);
-        console.log(yourCharacter);
         charSelectScreen.hide();
         gameScreen.show();
-        startGame();
+        playerImg.append("<img src='"+yourCharacter.image+"' class='charSelect'>");
+        //startGame();
     })
     
     $(".target").on("click",function(){
         combat(this.id, yourCharacter);
     })
 
-    $("#potion").on("click", function(){
+    $(".healthPotion").on("click", function(){
+        console.log(this);
         potion(this.id);
-        this.hide();
+        this.attr("visibility:", "hidden");
     })
 
     function firstLetter(wordHere){
