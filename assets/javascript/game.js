@@ -10,7 +10,8 @@ $(document).ready(function(){
     }
     var waveNumber = 1;
     class startingCharacter{
-        constructor(name){
+        constructor(name, source){
+            this.image = source;
             this.level = 1;
             this.exp = 0;
             this.name = name;
@@ -109,20 +110,25 @@ $(document).ready(function(){
         yourCharacter.health+=50;
     };
 
-    function startGame(character){
-        for (let i = 0; i < waveNumber; i++) {
-            const element = array[i];
+    function startGame(){
+        $()
+        for (var i = 0; i < waveNumber; i++) {
+           createWave(i);
+           waveNumber++;
         }
+
     }
 
     function createWave(iteration){
-
+        if(i>3){};
     }
+
     $(".charSelect").on("click", function(){
-        yourCharacter = new startingCharacter(this.id);
+        yourCharacter = new startingCharacter(this.id, this.src);
+        console.log(yourCharacter);
         charSelectScreen.hide();
         gameScreen.show();
-        startGame(yourCharacter);
+        startGame();
     })
     
     $(".target").on("click",function(){
