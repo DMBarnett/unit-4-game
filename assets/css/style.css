@@ -33,17 +33,21 @@ h2{
 
 #deathScreen{
     display: none;
+    background-image: url("../images/youDied.jpg");
+    width:100%;
+    height: 100%;
+    max-height:100%;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
 }
 
-#winScreen{
-    display: none;
-    text-align: center;
-}
 
 .healthPotion{
     width:150px;
-
 }
 
 progress{
@@ -69,3 +73,45 @@ progress{
     height:20px;
 }
 
+#winScreen {
+    background-image: url("../images/throne.jpg");
+    width:100%;
+    height: 100%;
+    max-height:100%;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    text-align: center;
+    
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*.charSelect, #bannerName, #hrBar, #charSelectScreen, #winScreen {
+    display: none;
+}*/
+
+#winRestartText, #deathScreen{
+    color: black;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;  
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+}

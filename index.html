@@ -21,13 +21,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header" id="bannerName">
-            <h1>Clash of Thrones</h1>
+    <div class="container" id="bannerName">
+        <div class="header">
+            <h1 id="bannerText">Clash of Thrones</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div id="hrBar" class="col-12">
             <hr>
         </div>
     </div>
@@ -41,34 +41,34 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Jaime">
-                            <img src="assets/images/Jaime-Lannister.jpg" class="charSelect">
+                        <a href="#">
+                            <img src="assets/images/Jaime-Lannister.jpg" class="charSelect" id="Jaime">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Jon">
-                            <img src="assets/images/jonSnow.jpeg" class="charSelect">
+                        <a href="#" >
+                            <img src="assets/images/jonSnow.jpeg" class="charSelect" id="Jon">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Jorah">
-                            <img src="assets/images/jorahMormont.jpg" class="charSelect">
+                        <a href="#" >
+                            <img src="assets/images/jorahMormont.jpg" class="charSelect" id="Jorah">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Arya">
-                            <img src="assets/images/aryaStark.jpg" class="charSelect">
+                        <a href="#" >
+                            <img src="assets/images/aryaStark.jpg" class="charSelect" id="Arya">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Kristofer">
-                            <img src="assets/images/kristoferHivju.jpeg" class="charSelect">
+                        <a href="#" >
+                            <img src="assets/images/kristoferHivju.jpeg" class="charSelect" id="Kristofer">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" id="Daenerys">
-                            <img src="assets/images/daenerysTargaryen.jpg" class="charSelect">
-                        </a>a</div>
+                        <a href="#" >
+                            <img src="assets/images/daenerysTargaryen.jpg" class="charSelect" id="Daenerys">
+                        </a></div>
                 </div>
             </div>
         </div>
@@ -89,7 +89,8 @@
                 <div class="row">
                     <div class="col-3">
                     </div>
-                    <div class="col-12 col-md-6" id="playerImage">
+                    <div class="col-12 col-md-6" >
+                        <img src="#" class="charSelect" id="playerImage">
                     </div>
                     <div class="col-3"></div>
                 </div>
@@ -116,31 +117,13 @@
             </div>
         </div>
     </div>
-    <div class="container" id="deathScreen">
-        <div class="row">
-            <img src="assets/images/youDied.jpg">
-        </div>
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <a href="#">Do you want to play a new game?</a>
-            </div>
-            <div class="col-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-3">
-                <button id="Y">Yes</button>
-            </div>
-            <div class="col-3">
-                <button id="N">No</button>
-            </div>
-            <div class="col-3"></div>
-        </div>
+    <div id="deathScreen">
+        <a href="#" class="clickRestart" ><h2>Click here to try again</h2></a>
     </div>
-    <div class="container" id="winScreen">
-        <div class="row">
-
+    <div id="winScreen">
+        <div id="winRestartText">
+            <h1>You Win!</h1>
+            <a href="#" class="clickRestart" ><h2>Click here to play again!</h2></a>
         </div>
     </div>
 </body>

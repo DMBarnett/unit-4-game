@@ -2,10 +2,12 @@
 
 $(document).ready(function(){
     var gameStarted = false;
+    var winScreen = $("#winScreen");
     var charSelectScreen = $("#charSelectScreen");
     var gameScreen = $("#gameplayArea");
     var yourCharacter;
     var playerImg = $("#playerImage");
+    var deathScreen = $("#deathScreen");
     var enemies = {
         "foot":"Frozen Zombie",
         "boss":"White Walker",
@@ -23,6 +25,7 @@ $(document).ready(function(){
             this.exp = 0;
             this.name = name;
             this.health = 100;
+            this.maxHealth = 100;
             this.attack = 20;
             this.strength = 0;
             this.agility = 0;
@@ -36,7 +39,7 @@ $(document).ready(function(){
         }
         assault(target){
             var damage = 1+(Math.floor(Math.random()*(this.attack+this.strength))*this.agility);
-            console.log(damage);
+
             target.health-=damage;
             $("").attr("value",target.health);
         }
@@ -54,7 +57,7 @@ $(document).ready(function(){
                 this.givenExp = (Math.floor(Math.random()*(50-20+1)+20));
             }else if(type === "boss"){
                 this.health = 300;
-                30;
+                this.attack = 30;
                 this.givenExp = (Math.floor(Math.random()*(100-50+1)+20));
             }else{
                 this.health = 500;
@@ -79,17 +82,24 @@ $(document).ready(function(){
             yourCharacter.strength +=(Math.floor(Math.random()*3)+1);
             yourCharacter.agility += (Math.floor(Math.random()*3)+1);
             yourCharacter.health = 100+(50*yourCharacter.level);
+            yourCharacter.maxHealth = 100+(50*yourCharacter.level);
             yourCharacter.exp -= yourCharacter.level*100;
             yourCharacter.level++;
             $("#expBar").attr("value", yourCharacter.exp);
             $("#expBar").attr("max", yourCharacter.level*100);
+            $("#healthBar").attr("value", yourCharacter.health);
+            $("#healthBar").attr("max", yourCharacter.maxHealth);
         }
     }
 
     function combat(target, yourCharacter, clicked){
+
         yourCharacter.assault(target);
         $("#progress"+clicked.slice(-1)).attr("value",target.health);
         if(target.health <0){
+            if(target.name === "King White Walker"){
+                youWin();
+            }
             gainExp(target, yourCharacter);
             $("#"+clicked).hide();
             $("#progress"+clicked.slice(-1)).hide();
@@ -98,6 +108,7 @@ $(document).ready(function(){
                 populateEnemies();
                 waveNumber++;
             }
+            return;
         }
         target.slash(yourCharacter);
         checkIfDead();
@@ -107,6 +118,8 @@ $(document).ready(function(){
         if(yourCharacter.health < 0){
             gameScreen.hide();
             deathScreen.show();
+            $("#bannerName").hide();
+            $("#hrBar").hide();
             return;
         }
     }
@@ -162,7 +175,7 @@ $(document).ready(function(){
         yourCharacter = new startingCharacter(this.id, this.src);
         charSelectScreen.hide();
         gameScreen.show();
-        playerImg.append("<img src='"+yourCharacter.image+"' class='charSelect'>");
+        playerImg.attr("src", ""+yourCharacter.image);
         if(!gameStarted){
             startGame();
         }
@@ -182,5 +195,31 @@ $(document).ready(function(){
     function firstLetter(wordHere){
         return (wordHere.charAt(0).toLowerCase());
     }
+
+    function youWin(){
+        gameScreen.hide();
+        winScreen.show();
+        $("#bannerName").hide();
+        $("#hrBar").hide();
+    };
+
+    $(".clickRestart").on("click", function(){
+        charSelectScreen.show();
+        deathScreen.hide();
+        winScreen.hide();
+        $("#bannerName").show();
+        $("#hrBar").show();
+        gameStarted=false;
+        $(".healthPotion").show();
+        $("#expBar").attr("value",0);
+        $("#expBar").attr("max", 100);
+        $("#healthBar").attr("value", 100);
+        $("#healthBar").attr("max", 100);
+        waveNumber = 1;
+        chanceKing = 2;
+        chanceWalker = 6;
+        totalEnemies = 0;
+        currentEnemies = [];
+    })
 
 })
