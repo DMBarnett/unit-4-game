@@ -81,36 +81,37 @@
             </div>
             <div class="col-12 col-md-6">
                 Your Experience:
-                <progress value="100" max="100" id="expBar"></progress>
+                <progress value="0" max="100" id="expBar"></progress>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6" id="playerArea">
                 <div class="row">
-                    <div class="col-3"></div>
+                    <div class="col-3">
+                    </div>
                     <div class="col-12 col-md-6" id="playerImage">
                     </div>
                     <div class="col-3"></div>
                 </div>
                 <div class="row">
-                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
-                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
-                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
-                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion" id="first"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion" id="second"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion" id="third"></a></div>
+                    <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion" id="fourth"></a></div>
                 </div>
             </div>
             <div class="col-12 col-md-6" id="enemyArea">
                 <div class="row">
-                    <div class="col-6" id="enemy1"><a href="#"><img></a></div>
-                    <div class="col-6" id="enemy2"><a href="#"><img></a></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy0"></a><progress id="progress0" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy1"></a><progress id="progress1" class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
                 <div class="row">
-                    <div class="col-6" id="enemy3"><a href="#"><img></a></div>
-                    <div class="col-6" id="enemy4"><a href="#"><img></a></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy2"></a><progress id="progress2" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy3"></a><progress id="progress3" class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
                 <div class="row">
-                    <div class="col-6" id="enemy5"><a href="#"><img></a></div>
-                    <div class="col-6" id="enemy6"><a href="#"><img></a></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy4"></a><progress id="progress4" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy5"></a><progress id="progress5" class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
             </div>
         </div>
