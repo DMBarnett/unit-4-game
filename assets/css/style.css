@@ -115,3 +115,16 @@ a:hover{
     color: black;
     text-decoration: none;
 }
+
+/*#playerStats{
+    border:2px solid black;
+    border-radius: 4px; 
+}
+*/
+p{
+    margin-bottom: 4px;
+}
+
+#infographic{
+    width:100px;
+}

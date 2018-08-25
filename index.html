@@ -46,27 +46,27 @@
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" >
+                        <a href="#">
                             <img src="assets/images/jonSnow.jpeg" class="charSelect" id="Jon">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" >
+                        <a href="#">
                             <img src="assets/images/jorahMormont.jpg" class="charSelect" id="Jorah">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" >
+                        <a href="#">
                             <img src="assets/images/aryaStark.jpg" class="charSelect" id="Arya">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" >
+                        <a href="#">
                             <img src="assets/images/kristoferHivju.jpeg" class="charSelect" id="Kristofer">
                         </a>
                     </div>
                     <div class="col-md-4 selectImg mx-auto">
-                        <a href="#" >
+                        <a href="#">
                             <img src="assets/images/daenerysTargaryen.jpg" class="charSelect" id="Daenerys">
                         </a></div>
                 </div>
@@ -87,12 +87,16 @@
         <div class="row">
             <div class="col-12 col-md-6" id="playerArea">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-6" id="playerStats">
+                        <p id="playerName">Player Name</p>
+                        <p>Your Health</p>
+                        <p><span id="playerHealth"></span>/<span id="playerMaxHealth"></span></p>
+                        <p>Total Experience</p>
+                        <p><span id="currentExp"></span>/<span id="levelExperience"></span></p>
                     </div>
-                    <div class="col-12 col-md-6" >
+                    <div class="col-12 col-md-6">
                         <img src="#" class="charSelect" id="playerImage">
                     </div>
-                    <div class="col-3"></div>
                 </div>
                 <div class="row">
                     <div class="col-3"><a href="#"><img src="assets/images/healthPotion.jpg" class="healthPotion" id="first"></a></div>
@@ -103,27 +107,51 @@
             </div>
             <div class="col-12 col-md-6" id="enemyArea">
                 <div class="row">
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy0"></a><progress id="progress0" class="enemyHealth" value="100" max="100"></progress></div>
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy1"></a><progress id="progress1" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy0"></a><progress id="progress0"
+                            class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy1"></a><progress id="progress1"
+                            class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy2"></a><progress id="progress2" class="enemyHealth" value="100" max="100"></progress></div>
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy3"></a><progress id="progress3" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy2"></a><progress id="progress2"
+                            class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy3"></a><progress id="progress3"
+                            class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
                 <div class="row">
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy4"></a><progress id="progress4" class="enemyHealth" value="100" max="100"></progress></div>
-                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy5"></a><progress id="progress5" class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy4"></a><progress id="progress4"
+                            class="enemyHealth" value="100" max="100"></progress></div>
+                    <div class="col-6"><a href="#"><img class="enemyImg target" id="enemy5"></a><progress id="progress5"
+                            class="enemyHealth" value="100" max="100"></progress></div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="row">Soldier</div>
+                <div class="row"><img src="assets/images/zombie1.jpg" class="enemyImg"></div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="row">Soldier</div>
+                <div class="row"><img src="assets/images/zombie1.jpg" class="enemyImg"></div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="row">Soldier</div>
+                <div class="row"><img src="assets/images/zombie1.jpg" class="enemyImg"></div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="row">Soldier</div>
+                <div class="row"><img src="assets/images/zombie1.jpg" class="enemyImg"></div>
             </div>
         </div>
     </div>
     <div id="deathScreen">
-        <a href="#" class="clickRestart" ><h2>Click here to try again</h2></a>
+        <a href="#" class="clickRestart"><h2>Click here to try again</h2></a>
     </div>
     <div id="winScreen">
         <div id="winRestartText">
             <h1>You Win!</h1>
-            <a href="#" class="clickRestart" ><h2>Click here to play again!</h2></a>
+            <a href="#" class="clickRestart"><h2>Click here to play again!</h2></a>
         </div>
     </div>
 </body>

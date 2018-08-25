@@ -63,7 +63,7 @@ $(document).ready(function(){
                 this.health = 500;
                 this.attack = 40;
                 this.givenExp = 0;
-                
+                chanceKing = 0;
             }
         }
         slash(target){
@@ -90,10 +90,10 @@ $(document).ready(function(){
             $("#healthBar").attr("value", yourCharacter.health);
             $("#healthBar").attr("max", yourCharacter.maxHealth);
         }
+        playerInformation();
     }
 
     function combat(target, yourCharacter, clicked){
-
         yourCharacter.assault(target);
         $("#progress"+clicked.slice(-1)).attr("value",target.health);
         if(target.health <0){
@@ -112,6 +112,7 @@ $(document).ready(function(){
         }
         target.slash(yourCharacter);
         checkIfDead();
+        playerInformation();
     }
 
     function checkIfDead(){
@@ -125,16 +126,24 @@ $(document).ready(function(){
     }
 
     function potion(input){
+        if(yourCharacter.health === yourCharacter.maxHealth){
+            return;
+        }
         yourCharacter.health+=50;
+        if(yourCharacter.health>yourCharacter.maxHealth){
+            yourCharacter.health = yourCharacter.maxHealth;
+        }
         var working = input.id;
         $("#healthBar").attr("value",yourCharacter.health);
         $("#"+working).css("display", "none");
+        playerInformation();
     };
 
     function startGame(){
         gameStarted = true;
         populateEnemies();
         waveNumber++;
+        $("#bannerText").text("Kill the King Walker to claim Victory!");
     }
 
     function populateEnemies(){
@@ -147,6 +156,7 @@ $(document).ready(function(){
             if(randy<chanceKing*waveNumber){
                 foobar = "king";
                 selectImage = "assets/images/kingWalker.png";
+                chanceKing = 0;
             }else if(randy<chanceWalker*waveNumber){
                 foobar = "boss";
                 selectImage = "assets/images/whiteWalker.jpg";
@@ -175,6 +185,7 @@ $(document).ready(function(){
         yourCharacter = new startingCharacter(this.id, this.src);
         charSelectScreen.hide();
         gameScreen.show();
+        playerInformation();
         playerImg.attr("src", ""+yourCharacter.image);
         if(!gameStarted){
             startGame();
@@ -191,6 +202,14 @@ $(document).ready(function(){
         var clickedElement = this;
         potion(clickedElement);
     })
+
+    function playerInformation(){
+        $("#playerName").text(yourCharacter.name);
+        $("#playerHealth").text(yourCharacter.health);
+        $("#playerMaxHealth").text(yourCharacter.maxHealth);
+        $("#currentExp").text(yourCharacter.exp);
+        $("#levelExperience").text(100*yourCharacter.level);
+    }
 
     function firstLetter(wordHere){
         return (wordHere.charAt(0).toLowerCase());
