@@ -125,6 +125,7 @@ p{
     margin-bottom: 4px;
 }
 
-#infographic{
-    width:100px;
+.infographic{
+    width:200px;
+    height:112px;
 }

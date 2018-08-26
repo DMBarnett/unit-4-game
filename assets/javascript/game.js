@@ -78,7 +78,7 @@ $(document).ready(function(){
     function gainExp(target, yourCharacter){
         yourCharacter.exp += target.givenExp;
         $("#expBar").attr("value", yourCharacter.exp);
-        if(yourCharacter.exp > yourCharacter.level*100){
+        if(yourCharacter.exp >= yourCharacter.level*100){
             yourCharacter.strength +=(Math.floor(Math.random()*3)+1);
             yourCharacter.agility += (Math.floor(Math.random()*3)+1);
             yourCharacter.health = 100+(50*yourCharacter.level);
@@ -116,7 +116,7 @@ $(document).ready(function(){
     }
 
     function checkIfDead(){
-        if(yourCharacter.health < 0){
+        if(yourCharacter.health <= 0){
             gameScreen.hide();
             deathScreen.show();
             $("#bannerName").hide();
